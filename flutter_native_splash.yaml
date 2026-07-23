@@ -1,0 +1,9 @@
+flutter_native_splash:
+  # Splash de abertura na cor de fundo do app, com a carinha do LuPe ao centro.
+  color: "#F7F8FF"
+  image: assets/icon/icon.png
+  android_12:
+    color: "#F7F8FF"
+    image: assets/icon/icon.png
+  android: true
+  ios: true
