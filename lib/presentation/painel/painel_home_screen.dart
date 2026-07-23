@@ -8,6 +8,7 @@ import 'fila_revisao_screen.dart';
 import 'gerar_ia_screen.dart';
 import 'pergunta_form_screen.dart';
 import 'relatorios_screen.dart';
+import 'sincronizacao_screen.dart';
 
 /// Menu do Painel dos Pais (RF05). Só é alcançado depois de passar pelo PIN
 /// (ver [PainelGateScreen]).
@@ -77,12 +78,24 @@ class PainelHomeScreen extends ConsumerWidget {
               _CartaoMenu(
                 emoji: '📊',
                 titulo: 'Relatórios',
-                subtitulo: 'Conteúdo por matéria e perfis',
+                subtitulo: 'Desempenho por filho e conteúdo',
                 cor: AppTheme.amarelo,
                 corTexto: AppTheme.texto,
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => const RelatoriosScreen(),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 14),
+              _CartaoMenu(
+                emoji: '☁️',
+                titulo: 'Sincronização na nuvem',
+                subtitulo: 'Login da família e ranking (salvo na VPS)',
+                cor: AppTheme.indigo,
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const SincronizacaoScreen(),
                   ),
                 ),
               ),

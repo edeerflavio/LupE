@@ -57,6 +57,12 @@ Fatia vertical jogável — **Fase 0 + Fase 1 do roadmap**:
   build em `BUILD.md`.
 - ✅ Conteúdo: **60 perguntas** de Quiz, **~77 palavras** de Forca, **60 países**
   (bandeiras + mapa) e **28 animais** (fotos).
+- ✅ **Salvo na nuvem (opcional)**: backend **PocketBase** (SQLite) auto-hospedável
+  na sua VPS. Com **login da família**, perfis/progresso/conquistas sincronizam
+  entre aparelhos e o **ranking da família** aparece nas Conquistas. Sem backend,
+  tudo continua salvo localmente (offline-first). Kit de deploy em `backend/`;
+  configuração no app em **Área dos pais → Sincronização na nuvem**.
+- ✅ **Web publicada no Netlify**: `https://lupe-kids.netlify.app`.
 - ✅ **Multiplataforma mobile**: Android + **iOS (iPhone e iPad)**. Layouts
   **responsivos** — grades adaptativas por largura (2 colunas no celular, mais
   no iPad) e conteúdo com largura máxima para não esticar em telas grandes
