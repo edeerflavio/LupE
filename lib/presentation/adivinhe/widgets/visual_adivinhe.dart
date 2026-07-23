@@ -1,12 +1,13 @@
 import 'package:countries_world_map/countries_world_map.dart';
 import 'package:countries_world_map/data/maps/world_map.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../core/theme/app_theme.dart';
 import '../../../domain/models/adivinhe_item.dart';
 
-/// Mostra o "enigma" do item conforme seu tipo: bandeira (emoji), país no
-/// mapa-múndi, emoji de objeto, ou imagem (marca/personagem — futuro).
+/// Mostra o "enigma" do item conforme seu tipo: bandeira (PNG), país no
+/// mapa-múndi, foto (animais), logo de marca (SVG) ou emoji.
 class VisualAdivinhe extends StatelessWidget {
   final AdivinheItem item;
   const VisualAdivinhe({super.key, required this.item});
@@ -16,12 +17,26 @@ class VisualAdivinhe extends StatelessWidget {
     return switch (item.tipo) {
       TipoVisual.bandeira => _bandeira(),
       TipoVisual.foto => _foto(),
+      TipoVisual.marca => _marca(),
       TipoVisual.emoji => _emoji(item.emoji ?? '❓', tamanho: 110),
       TipoVisual.mapa => _mapa(),
-      TipoVisual.marca ||
-      TipoVisual.personagem =>
-        _imagemOuPlaceholder(),
+      TipoVisual.personagem => _imagemOuPlaceholder(),
     };
+  }
+
+  /// Logo de marca em SVG (Simple Icons), centralizado.
+  Widget _marca() {
+    final asset = item.assetImagem;
+    if (asset == null) return _imagemOuPlaceholder();
+    return Padding(
+      padding: const EdgeInsets.all(28),
+      child: SvgPicture.asset(
+        asset,
+        fit: BoxFit.contain,
+        placeholderBuilder: (_) =>
+            const Center(child: CircularProgressIndicator()),
+      ),
+    );
   }
 
   /// Foto real (animais etc.), preenchendo a área com cantos arredondados.

@@ -35,3 +35,10 @@ conforme exigido pelas licenças Creative Commons.
 | Tubarão | Diego Delso | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Tibur%C3%B3n_azul_(Prionace_glauca),_canal_Fayal-Pico,_islas_Azores,_Portugal,_2020-07-27,_DD_14.jpg) |
 
 > Bandeiras (`assets/flags/`): domínio público (flagpedia.net), sem atribuição exigida.
+
+## Logos de marcas (jogo Adivinhe · Marcas)
+
+Logos do **[Simple Icons](https://simpleicons.org)** (`assets/brands/`), distribuídos
+sob **CC0 1.0**. Os nomes e logotipos são **marcas registradas de seus respectivos
+donos** — aqui são usados apenas para fim **educativo de identificação**, em app de
+**uso pessoal, não comercial**. Nenhuma associação ou patrocínio é implicado.

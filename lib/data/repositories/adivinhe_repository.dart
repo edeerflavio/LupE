@@ -2,16 +2,18 @@ import 'dart:math';
 
 import '../../domain/models/adivinhe_item.dart';
 import '../seed/animais_adivinhe.dart';
+import '../seed/marcas_adivinhe.dart';
 import '../seed/paises_adivinhe.dart';
 
 /// Categorias jogáveis do modo Adivinhe.
-enum CategoriaAdivinhe { bandeiras, mapa, animais }
+enum CategoriaAdivinhe { bandeiras, mapa, animais, marcas }
 
 extension CategoriaAdivinheX on CategoriaAdivinhe {
   String get rotulo => switch (this) {
         CategoriaAdivinhe.bandeiras => 'Bandeiras',
         CategoriaAdivinhe.mapa => 'Mapa',
         CategoriaAdivinhe.animais => 'Animais',
+        CategoriaAdivinhe.marcas => 'Marcas',
       };
 }
 
@@ -24,6 +26,7 @@ class AdivinheRepository {
         CategoriaAdivinhe.bandeiras => seedBandeiras,
         CategoriaAdivinhe.mapa => seedMapa,
         CategoriaAdivinhe.animais => seedAnimais,
+        CategoriaAdivinhe.marcas => seedMarcas,
       };
 
   /// Sorteia um item, evitando repetir o [evitarId] anterior quando possível.

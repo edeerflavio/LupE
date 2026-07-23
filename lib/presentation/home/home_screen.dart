@@ -133,6 +133,14 @@ class HomeScreen extends ConsumerWidget {
                             context, CategoriaAdivinhe.animais),
                       ),
                       _CartaoJogo(
+                        titulo: 'Adivinhe',
+                        subtitulo: 'Marcas',
+                        emoji: '🔶',
+                        cor: AppTheme.vermelho,
+                        onTap: () => _abrirAdivinhe(
+                            context, CategoriaAdivinhe.marcas),
+                      ),
+                      _CartaoJogo(
                         titulo: 'Matemática',
                         subtitulo: 'Contas',
                         emoji: '➗',

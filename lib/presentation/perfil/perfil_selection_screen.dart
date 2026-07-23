@@ -30,18 +30,20 @@ class PerfilSelectionScreen extends ConsumerWidget {
               children: [
                 const SizedBox(height: 12),
                 const KickerLabel('Pedro & Luiza'),
-                const SizedBox(height: 8),
-                const Text(
-                  'LuPe',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 56,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: -1,
-                    color: AppTheme.texto,
+                const SizedBox(height: 12),
+                // Logo do LuPe (badge arredondado).
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(28),
+                    boxShadow: AppTheme.sombraVidro,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(28),
+                    child: Image.asset('assets/icon/icon.png',
+                        width: 132, height: 132),
                   ),
                 ),
-                const SizedBox(height: 6),
+                const SizedBox(height: 12),
                 const Text(
                   'Quem vai jogar hoje?',
                   textAlign: TextAlign.center,

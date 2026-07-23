@@ -41,6 +41,7 @@ dependencies:
   audioplayers: ^6.7.1
   confetti: ^0.8.0
   pocketbase: ^0.24.0+1
+  flutter_svg: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,12 @@ flutter:
     - assets/animals/
     # Efeitos sonoros sintetizados (gerados por síntese, sem copyright).
     - assets/sounds/
+    # Logos de marcas em SVG (Simple Icons, CC0 — marcas dos respectivos donos,
+    # uso educativo). Ver CREDITOS-IMAGENS.md.
+    - assets/brands/
+    # Logo do LuPe (ícone do app, também usada na tela inicial).
+    - assets/icon/icon.png
+    - assets/logo/lupe_wordmark.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

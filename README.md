@@ -21,15 +21,20 @@ Fatia vertical jogável — **Fase 0 + Fase 1 do roadmap**:
   progressivo do boneco, tela de vitória/derrota.
 - ✅ **Tratamento de acentos** (RF03.5): a criança digita `A` e acerta
   `Á/À/Ã/Â`; a cedilha entra via `C`. Coberto por testes.
+- ✅ **Logo LuPe**: wordmark próprio (carinha no "u") como ícone do app,
+  favicon e na tela inicial.
 - ✅ **Adivinhe** (letras embaralhadas): mostra um enigma e o jogador monta o
-  nome com peças de letras embaralhadas (mesmo tratamento de acento).
+  nome com peças de letras embaralhadas (mesmo tratamento de acento). Tem
+  **letras chamariz** (que não fazem parte da resposta) no médio/difícil.
   - **Bandeiras**: **imagem real** da bandeira em PNG (42 países), de domínio
     público (flagcdn.com / flagpedia.net), embutidas em `assets/flags/` e
     usadas offline.
   - **Mapa**: país destacado em cor diferente no mapa-múndi (pacote
     `countries_world_map`, vetorial e offline) — mesmos 42 países.
-  - **Animais**: **fotos reais** (18 animais) do Wikimedia Commons, sob
+  - **Animais**: **fotos reais** (28 animais) do Wikimedia Commons, sob
     licenças livres (CC / domínio público). Créditos em `CREDITOS-IMAGENS.md`.
+  - **Marcas**: **logos** (18 marcas em SVG) do Simple Icons (CC0; marcas dos
+    respectivos donos, uso educativo).
   - Botão de dica, feedback de acerto/erro, "próximo" com item novo.
 - ✅ **Matemática** (RF04): gerador procedural (soma, subtração, tabuada,
   multiplicação, divisão exata), **dificuldade adaptativa** (sobe após 3

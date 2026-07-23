@@ -22,12 +22,22 @@ class AdivinheController extends FamilyNotifier<AdivinheEstado, CategoriaAdivinh
   AdivinheEstado build(CategoriaAdivinhe cat) => _montar(_repo.sortear(cat));
 
   AdivinheEstado _montar(AdivinheItem item) {
-    final letras =
-        normalizar(item.resposta).split('').where(ehLetra).toList();
-    letras.shuffle(_rng);
-    // Evita a bandeja já sair na ordem exata da resposta.
     final alvo = normalizar(item.resposta).split('').where(ehLetra).toList();
-    if (letras.length > 1 && _mesmaOrdem(letras, alvo)) {
+    final letras = [...alvo];
+
+    // Letras "chamariz" que NÃO fazem parte da resposta, para dificultar.
+    final chamariz = switch (item.dificuldade) {
+      Dificuldade.facil => 0,
+      Dificuldade.medio => 2,
+      Dificuldade.dificil => 4,
+    };
+    for (var i = 0; i < chamariz; i++) {
+      letras.add(String.fromCharCode(65 + _rng.nextInt(26))); // A-Z aleatória
+    }
+
+    letras.shuffle(_rng);
+    // Sem chamariz, evita a bandeja já sair na ordem exata da resposta.
+    if (chamariz == 0 && letras.length > 1 && _mesmaOrdem(letras, alvo)) {
       final t = letras.removeAt(0);
       letras.add(t);
     }
