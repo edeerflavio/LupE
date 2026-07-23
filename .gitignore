@@ -55,3 +55,6 @@ backend/pocketbase
 backend/pocketbase.exe
 backend/pb_data/
 backend/pb_temp/
+
+# Local Netlify folder
+.netlify

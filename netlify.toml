@@ -1,0 +1,20 @@
+# Configuração de deploy do LuPe (web) no Netlify.
+# Publica a pasta gerada por `flutter build web --release`.
+
+[build]
+  publish = "build/web"
+  # O build é feito localmente (flutter). Não há build no Netlify.
+  command = ""
+
+# SPA fallback: o Flutter web usa roteamento no cliente — qualquer rota
+# desconhecida deve servir o index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
