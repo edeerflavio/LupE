@@ -92,7 +92,66 @@ const List<_Pais> _paises = [
   _Pais('COSTA RICA', 'cr', 'País da América Central, das florestas e da natureza', Dificuldade.medio),
   _Pais('JAMAICA', 'jm', 'Ilha do Caribe, do reggae', Dificuldade.medio),
   _Pais('PANAMÁ', 'pa', 'País do canal que liga dois oceanos', Dificuldade.medio),
+
+  // --- Américas (expansão) ---
+  _Pais('REPÚBLICA DOMINICANA', 'do', 'Ilha caribenha do merengue e das praias', Dificuldade.dificil),
+  _Pais('HAITI', 'ht', 'Divide uma ilha caribenha com a República Dominicana', Dificuldade.dificil),
+  _Pais('HONDURAS', 'hn', 'País da América Central, entre Guatemala e Nicarágua', Dificuldade.dificil),
+
+  // --- Europa (expansão) ---
+  _Pais('TCHÉQUIA', 'cz', 'País de Praga, dos castelos e das marionetes', Dificuldade.dificil),
+  _Pais('HUNGRIA', 'hu', 'País do leste europeu, de Budapeste e do páprica', Dificuldade.dificil),
+  _Pais('CROÁCIA', 'hr', 'País de praias no mar Adriático, craque no futebol', Dificuldade.dificil),
+  _Pais('SÉRVIA', 'rs', 'País dos Bálcãs, de Belgrado', Dificuldade.dificil),
+  _Pais('BULGÁRIA', 'bg', 'País do leste europeu, do iogurte e das rosas', Dificuldade.dificil),
+  _Pais('ESLOVÁQUIA', 'sk', 'País europeu vizinho da Tchéquia', Dificuldade.dificil),
+  _Pais('ESTÔNIA', 'ee', 'País báltico mais ao norte, super digital', Dificuldade.dificil),
+  _Pais('LETÔNIA', 'lv', 'País báltico do meio, de Riga', Dificuldade.dificil),
+  _Pais('LITUÂNIA', 'lt', 'País báltico mais ao sul, apaixonado por basquete', Dificuldade.dificil),
+  _Pais('LUXEMBURGO', 'lu', 'Pequeno e rico país entre França, Bélgica e Alemanha', Dificuldade.dificil),
+  _Pais('ALBÂNIA', 'al', 'País dos Bálcãs, da águia de duas cabeças', Dificuldade.dificil),
+
+  // --- Ásia e Oriente Médio (expansão) ---
+  _Pais('PAQUISTÃO', 'pk', 'Vizinho da Índia, das montanhas mais altas do mundo', Dificuldade.dificil),
+  _Pais('BANGLADESH', 'bd', 'País asiático muito populoso, dos grandes rios', Dificuldade.dificil),
+  _Pais('SRI LANKA', 'lk', 'Ilha do chá, ao sul da Índia', Dificuldade.dificil),
+  _Pais('NEPAL', 'np', 'País do monte Everest, no Himalaia', Dificuldade.medio),
+  _Pais('MONGÓLIA', 'mn', 'País das estepes e dos cavaleiros de Gengis Khan', Dificuldade.dificil),
+  _Pais('CAZAQUISTÃO', 'kz', 'O maior país da Ásia Central', Dificuldade.dificil),
+  _Pais('MALÁSIA', 'my', 'País asiático das torres gêmeas Petronas', Dificuldade.dificil),
+  _Pais('SINGAPURA', 'sg', 'Cidade-país asiática moderníssima e organizada', Dificuldade.dificil),
+  _Pais('EMIRADOS ÁRABES', 'ae', 'País de Dubai e dos prédios altíssimos', Dificuldade.medio),
+  _Pais('CATAR', 'qa', 'Pequeno país do Golfo, sede da Copa de 2022', Dificuldade.medio),
+  _Pais('IRAQUE', 'iq', 'País dos rios Tigre e Eufrates, a antiga Mesopotâmia', Dificuldade.dificil),
+  _Pais('JORDÂNIA', 'jo', 'País da cidade de Petra, esculpida na rocha', Dificuldade.dificil),
+  _Pais('LÍBANO', 'lb', 'País do cedro na bandeira, de Beirute', Dificuldade.dificil),
+  _Pais('CAMBOJA', 'kh', 'País dos templos de Angkor', Dificuldade.dificil),
+  _Pais('MIANMAR', 'mm', 'País asiático dos mil templos dourados', Dificuldade.dificil),
+
+  // --- África (expansão) ---
+  _Pais('GANA', 'gh', 'País africano famoso pelo cacau', Dificuldade.dificil),
+  _Pais('SENEGAL', 'sn', 'País mais a oeste da África continental', Dificuldade.dificil),
+  _Pais('COSTA DO MARFIM', 'ci', 'País africano do cacau e dos elefantes', Dificuldade.dificil),
+  _Pais('CAMARÕES', 'cm', 'País africano dos Leões Indomáveis', Dificuldade.dificil),
+  _Pais('TUNÍSIA', 'tn', 'País do norte da África, da antiga Cartago', Dificuldade.dificil),
+  _Pais('ARGÉLIA', 'dz', 'Maior país da África, quase todo no Saara', Dificuldade.dificil),
+  _Pais('TANZÂNIA', 'tz', 'País do Kilimanjaro e do Serengeti', Dificuldade.dificil),
+  _Pais('UGANDA', 'ug', 'País africano das nascentes do rio Nilo', Dificuldade.dificil),
+  _Pais('ZÂMBIA', 'zm', 'País das cataratas Vitória', Dificuldade.dificil),
+  _Pais('ZIMBÁBUE', 'zw', 'País africano das antigas ruínas de pedra', Dificuldade.dificil),
+  _Pais('MOÇAMBIQUE', 'mz', 'País africano que fala português, no oceano Índico', Dificuldade.medio),
+  _Pais('MADAGASCAR', 'mg', 'Grande ilha africana dos lêmures', Dificuldade.medio),
+  _Pais('NAMÍBIA', 'na', 'País africano do deserto de dunas vermelhas', Dificuldade.dificil),
+  _Pais('BOTSUANA', 'bw', 'País africano dos safáris no delta do Okavango', Dificuldade.dificil),
+
+  // --- Oceania (expansão) ---
+  _Pais('FIJI', 'fj', 'Ilhas paradisíacas no meio do Pacífico', Dificuldade.dificil),
+  _Pais('PAPUA NOVA GUINÉ', 'pg', 'Metade de uma grande ilha ao norte da Austrália', Dificuldade.dificil),
 ];
+
+/// Países pequenos demais para serem vistos no mapa-múndi — só aparecem no
+/// modo Bandeiras.
+const Set<String> _foraDoMapa = {'sg', 'lu'};
 
 String _flag(String iso) => 'assets/flags/$iso.png';
 
@@ -114,6 +173,7 @@ final List<AdivinheItem> seedBandeiras = [
 /// Itens do modo Mapa (destaca o país no mapa-múndi).
 final List<AdivinheItem> seedMapa = [
   for (final p in _paises)
+    if (!_foraDoMapa.contains(p.iso))
     AdivinheItem(
       id: 'mapa_${p.iso}',
       materia: 'geografia',

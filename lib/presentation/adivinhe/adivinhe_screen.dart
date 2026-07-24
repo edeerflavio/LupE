@@ -10,6 +10,7 @@ import '../../data/repositories/adivinhe_repository.dart';
 import '../../domain/models/adivinhe_estado.dart';
 import '../conquistas/celebrar.dart';
 import '../widgets/confete.dart';
+import '../widgets/narrar.dart';
 import 'widgets/visual_adivinhe.dart';
 
 /// Jogo "Adivinhe" (RF-novo): mostra um visual e o jogador monta o nome com
@@ -67,7 +68,12 @@ class AdivinheScreen extends ConsumerWidget {
                 maxWidth: 620,
                 child: Column(
                 children: [
-                  _Dica(texto: estado.item.dica),
+                  // Marcas não têm dica de texto: o desafio é só o símbolo.
+                  if (estado.item.dica.isNotEmpty) ...[
+                    NarrarAuto('Dica: ${estado.item.dica}',
+                        key: ValueKey('narra_${estado.item.id}')),
+                    _Dica(texto: estado.item.dica),
+                  ],
                   const SizedBox(height: 12),
                   Card(
                     color: Colors.white,
@@ -135,6 +141,7 @@ class _Dica extends StatelessWidget {
                 style:
                     const TextStyle(fontSize: 17, fontWeight: FontWeight.w600)),
           ),
+          BotaoFalar('Dica: $texto'),
         ],
       ),
     );

@@ -15,7 +15,15 @@ class PerguntaRepository {
       await _salvar(prefs, seedPerguntas);
       return List.of(seedPerguntas);
     }
-    return Pergunta.decode(raw);
+    final atuais = Pergunta.decode(raw);
+    // Novas perguntas da semente (de atualizações do app) entram no banco
+    // local sem apagar as criadas/editadas pela família.
+    final ids = atuais.map((p) => p.id).toSet();
+    final novas = seedPerguntas.where((p) => !ids.contains(p.id)).toList();
+    if (novas.isEmpty) return atuais;
+    final todas = [...atuais, ...novas];
+    await _salvar(prefs, todas);
+    return todas;
   }
 
   Future<void> salvarTodos(List<Pergunta> perguntas) async {

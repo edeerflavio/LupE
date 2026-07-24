@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import '../../domain/models/palavra_forca.dart';
+import '../seed/palavras_adulto.dart';
 import '../seed/palavras_geografia.dart';
 
 /// Fornece palavras para a Forca a partir das sementes locais.
@@ -14,13 +15,15 @@ class PalavraRepository {
     switch (materia) {
       case 'geografia':
         return seedGeografia;
+      case 'adulto':
+        return seedAdulto;
       default:
         return const [];
     }
   }
 
   /// Materias disponíveis com pelo menos uma palavra.
-  List<String> materiasDisponiveis() => const ['geografia'];
+  List<String> materiasDisponiveis() => const ['geografia', 'adulto'];
 
   /// Sorteia uma palavra (RF03.1). Filtra por dificuldade quando informada;
   /// se não houver palavra na dificuldade pedida, cai para o conjunto todo.

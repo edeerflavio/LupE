@@ -84,6 +84,17 @@ final List<Conquista> catalogoConquistas = [
         _jogou(p, 'matematica') &&
         _jogou(p, 'quiz'),
   ),
+  Conquista(
+    id: 'super_explorador',
+    titulo: 'Super explorador',
+    descricao: 'Jogou Velha, Cruzadinha, Tetris e Quebra-cabeça',
+    emoji: '🚀',
+    alcancada: (p) =>
+        _jogou(p, 'velha') &&
+        _jogou(p, 'cruzada') &&
+        _jogou(p, 'tetris') &&
+        _jogou(p, 'puzzle'),
+  ),
   // Medalhas por matéria (20 acertos na matéria)
   Conquista(
     id: 'medalha_geografia',

@@ -45,7 +45,39 @@ const List<_Animal> _animais = [
   _Animal('TUBARÃO', 'tubarao', 'Peixe grande e temido do mar', Dificuldade.dificil),
 ];
 
-/// Itens do modo Animais (mostra a foto real).
+/// Animal representado por emoji (não precisa de foto embutida).
+class _AnimalEmoji {
+  final String nome;
+  final String emoji;
+  final String dica;
+  final Dificuldade dif;
+  const _AnimalEmoji(this.nome, this.emoji, this.dica, this.dif);
+}
+
+const List<_AnimalEmoji> _animaisEmoji = [
+  _AnimalEmoji('VACA', '🐄', 'Dá leite e faz muu', Dificuldade.facil),
+  _AnimalEmoji('PORCO', '🐷', 'Animal rosado da fazenda que adora lama', Dificuldade.facil),
+  _AnimalEmoji('GALINHA', '🐔', 'Bota ovos e faz cocoricó', Dificuldade.facil),
+  _AnimalEmoji('PATO', '🦆', 'Ave que nada na lagoa e faz quá-quá', Dificuldade.facil),
+  _AnimalEmoji('OVELHA', '🐑', 'Animal da fazenda que dá lã', Dificuldade.facil),
+  _AnimalEmoji('RATO', '🐭', 'Roedor pequeno que adora queijo', Dificuldade.facil),
+  _AnimalEmoji('BALEIA', '🐋', 'Gigante do mar que solta jato de água', Dificuldade.facil),
+  _AnimalEmoji('JACARÉ', '🐊', 'Réptil de dentes grandes que vive nos rios', Dificuldade.medio),
+  _AnimalEmoji('CARANGUEJO', '🦀', 'Anda de lado e tem pinças', Dificuldade.medio),
+  _AnimalEmoji('CANGURU', '🦘', 'Pula alto e carrega o filhote na bolsa', Dificuldade.medio),
+  _AnimalEmoji('FLAMINGO', '🦩', 'Ave rosa de pernas bem finas', Dificuldade.medio),
+  _AnimalEmoji('ÁGUIA', '🦅', 'Ave de rapina de visão poderosa', Dificuldade.medio),
+  _AnimalEmoji('MORCEGO', '🦇', 'Mamífero que voa de noite', Dificuldade.medio),
+  _AnimalEmoji('FORMIGA', '🐜', 'Inseto pequeno e forte que vive em colônias', Dificuldade.medio),
+  _AnimalEmoji('JOANINHA', '🐞', 'Inseto vermelho de bolinhas pretas', Dificuldade.medio),
+  _AnimalEmoji('CARACOL', '🐌', 'Bem devagar, carrega uma concha em espiral', Dificuldade.dificil),
+  _AnimalEmoji('PAVÃO', '🦚', 'Ave que abre um leque de penas coloridas', Dificuldade.dificil),
+  _AnimalEmoji('HIPOPÓTAMO', '🦛', 'Grandão que passa o dia dentro do rio', Dificuldade.dificil),
+  _AnimalEmoji('RINOCERONTE', '🦏', 'Tem um chifre no nariz e pele grossa', Dificuldade.dificil),
+  _AnimalEmoji('PREGUIÇA', '🦥', 'Vive pendurada nas árvores, bem devagarinho', Dificuldade.dificil),
+];
+
+/// Itens do modo Animais (foto real ou emoji).
 final List<AdivinheItem> seedAnimais = [
   for (final a in _animais)
     AdivinheItem(
@@ -54,6 +86,16 @@ final List<AdivinheItem> seedAnimais = [
       tipo: TipoVisual.foto,
       resposta: a.nome,
       assetImagem: 'assets/animals/${a.slug}.jpg',
+      dica: a.dica,
+      dificuldade: a.dif,
+    ),
+  for (final a in _animaisEmoji)
+    AdivinheItem(
+      id: 'anim_e_${a.nome.toLowerCase()}',
+      materia: 'ciencias',
+      tipo: TipoVisual.emoji,
+      resposta: a.nome,
+      emoji: a.emoji,
       dica: a.dica,
       dificuldade: a.dif,
     ),

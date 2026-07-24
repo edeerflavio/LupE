@@ -12,6 +12,7 @@ import '../../core/widgets/responsivo.dart';
 import '../../domain/models/quiz_estado.dart';
 import '../conquistas/celebrar.dart';
 import '../widgets/confete.dart';
+import '../widgets/narrar.dart';
 
 /// A partida de Quiz (RF02): múltipla escolha, timer opcional, ajuda de
 /// eliminação, feedback imediato e explicação obrigatória após responder.
@@ -124,12 +125,24 @@ class _Partida extends StatelessWidget {
             _BarraTempo(segundos: estado.segundos, respondida: estado.respondida),
             const SizedBox(height: 14),
           ],
+          NarrarAuto(pergunta.enunciado,
+              key: ValueKey('narra_q${estado.indice}')),
           GlassCard(
             padding: const EdgeInsets.all(20),
-            child: Text(
-              pergunta.enunciado,
-              style: const TextStyle(
-                  fontSize: 22, fontWeight: FontWeight.w800, height: 1.25),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Text(
+                    pergunta.enunciado,
+                    style: const TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w800,
+                        height: 1.25),
+                  ),
+                ),
+                BotaoFalar(pergunta.enunciado),
+              ],
             ),
           ),
           const SizedBox(height: 18),
@@ -150,6 +163,13 @@ class _Partida extends StatelessWidget {
               onTap: controller.usarAjuda,
             ),
           if (estado.respondida) ...[
+            NarrarAuto(
+              estado.acertou
+                  ? 'Isso mesmo! ${estado.atual.explicacao}'
+                  : 'Quase! A resposta certa era ${estado.atual.textoCorreta}. '
+                      '${estado.atual.explicacao}',
+              key: ValueKey('narra_e${estado.indice}'),
+            ),
             _Explicacao(estado: estado),
             const SizedBox(height: 16),
             ElevatedButton.icon(

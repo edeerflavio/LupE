@@ -80,7 +80,15 @@ final materiasComQuizProvider = Provider<List<String>>((ref) {
     for (final p in todas)
       if (p.status == StatusPergunta.aprovada) p.materia
   };
-  final ordem = ['geografia', 'ciencias', 'historia', 'portugues', 'conhecimentos'];
+  final ordem = [
+    'geografia',
+    'capitais',
+    'ciencias',
+    'historia',
+    'portugues',
+    'conhecimentos',
+    'adulto',
+  ];
   final lista = set.toList()
     ..sort((a, b) {
       final ia = ordem.indexOf(a), ib = ordem.indexOf(b);

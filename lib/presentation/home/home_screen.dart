@@ -3,16 +3,21 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../application/config_controller.dart';
 import '../../application/perfil_controller.dart';
+import '../../core/audio/narrador.dart';
 import '../../core/constants/avatares.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/responsivo.dart';
 import '../../data/repositories/adivinhe_repository.dart';
 import '../adivinhe/adivinhe_screen.dart';
 import '../conquistas/conquistas_screen.dart';
+import '../cruzada/cruzada_screen.dart';
 import '../forca/forca_screen.dart';
 import '../matematica/mat_intro_screen.dart';
 import '../painel/painel_gate_screen.dart';
+import '../puzzle/puzzle_screen.dart';
 import '../quiz/quiz_intro_screen.dart';
+import '../tetris/tetris_screen.dart';
+import '../velha/velha_screen.dart';
 
 /// Tela inicial após escolher o perfil. Grade de jogos em painéis de vidro.
 class HomeScreen extends ConsumerWidget {
@@ -68,6 +73,26 @@ class HomeScreen extends ConsumerWidget {
                         icon: Icon(somAtivo
                             ? Icons.volume_up_rounded
                             : Icons.volume_off_rounded),
+                        color: AppTheme.texto,
+                      );
+                    }),
+                    Consumer(builder: (context, ref, _) {
+                      final narracao = ref.watch(narracaoAtivaProvider);
+                      return IconButton(
+                        tooltip: narracao
+                            ? 'Desligar narração'
+                            : 'Ligar narração',
+                        onPressed: () {
+                          ref.read(narracaoAtivaProvider.notifier).alternar();
+                          if (!narracao) {
+                            ref
+                                .read(narradorProvider)
+                                .falar('Narração ligada!');
+                          }
+                        },
+                        icon: Icon(narracao
+                            ? Icons.record_voice_over_rounded
+                            : Icons.voice_over_off_rounded),
                         color: AppTheme.texto,
                       );
                     }),
@@ -158,6 +183,58 @@ class HomeScreen extends ConsumerWidget {
                         onTap: () => Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (_) => const QuizIntroScreen()),
+                        ),
+                      ),
+                      _CartaoJogo(
+                        titulo: 'Jogo da Velha',
+                        subtitulo: 'Estratégia',
+                        emoji: '⭕',
+                        cor: AppTheme.roxo,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (_) => const VelhaScreen()),
+                        ),
+                      ),
+                      _CartaoJogo(
+                        titulo: 'Cruzadinha',
+                        subtitulo: 'Palavras',
+                        emoji: '✏️',
+                        cor: AppTheme.amarelo,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (_) => const CruzadaScreen()),
+                        ),
+                      ),
+                      _CartaoJogo(
+                        titulo: 'Tetris',
+                        subtitulo: 'Blocos',
+                        emoji: '🧱',
+                        cor: AppTheme.azul,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (_) => const TetrisScreen()),
+                        ),
+                      ),
+                      _CartaoJogo(
+                        titulo: 'Quebra-cabeça',
+                        subtitulo: 'Deslize',
+                        emoji: '🧩',
+                        cor: AppTheme.verde,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (_) => const PuzzleScreen()),
+                        ),
+                      ),
+                      _CartaoJogo(
+                        titulo: 'Forca',
+                        subtitulo: 'Modo adulto',
+                        emoji: '🎓',
+                        cor: AppTheme.vermelho,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) =>
+                                const ForcaScreen(materia: 'adulto'),
+                          ),
                         ),
                       ),
                       _CartaoJogo(

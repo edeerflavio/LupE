@@ -4,11 +4,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../application/forca_controller.dart';
 import '../../core/audio/sons.dart';
+import '../../core/constants/materias.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/widgets/responsivo.dart';
 import '../../domain/models/forca_estado.dart';
 import '../conquistas/celebrar.dart';
 import '../widgets/confete.dart';
+import '../widgets/narrar.dart';
 import 'widgets/boneco_forca.dart';
 import 'widgets/teclado_virtual.dart';
 
@@ -53,7 +55,7 @@ class ForcaScreen extends ConsumerWidget {
       backgroundColor: Colors.transparent,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('Forca · Geografia'),
+        title: Text('Forca · ${Materias.rotulo(materia)}'),
       ),
       body: CloudBackground(
         child: SafeArea(
@@ -71,6 +73,8 @@ class ForcaScreen extends ConsumerWidget {
                         maxWidth: 560,
                         child: Column(
                         children: [
+                          NarrarAuto('Dica: ${estado.palavra.dica}',
+                              key: ValueKey('narra_${estado.palavra.id}')),
                           _Dica(texto: estado.palavra.dica),
                           const SizedBox(height: 8),
                           SizedBox(
@@ -148,6 +152,7 @@ class _Dica extends StatelessWidget {
                   fontSize: 17, fontWeight: FontWeight.w600),
             ),
           ),
+          BotaoFalar('Dica: $texto'),
         ],
       ),
     );

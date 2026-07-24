@@ -34,7 +34,11 @@ conforme exigido pelas licenças Creative Commons.
 | Papagaio | Tisha Mukherjee | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Vernal_Hanging-Parrot_in_Saswad_August_2025_by_Tisha_Mukherjee_09.jpg) |
 | Tubarão | Diego Delso | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Commons](https://commons.wikimedia.org/wiki/File:Tibur%C3%B3n_azul_(Prionace_glauca),_canal_Fayal-Pico,_islas_Azores,_Portugal,_2020-07-27,_DD_14.jpg) |
 
-> Bandeiras (`assets/flags/`): domínio público (flagpedia.net), sem atribuição exigida.
+> Bandeiras (`assets/flags/`): domínio público (flagpedia.net / flagcdn.com), sem
+> atribuição exigida. Inclui as 45 bandeiras adicionadas na expansão de julho/2026.
+>
+> Animais extras do modo Adivinhe sem foto própria usam **emoji do sistema**
+> (sem copyright).
 
 ## Logos de marcas (jogo Adivinhe · Marcas)
 

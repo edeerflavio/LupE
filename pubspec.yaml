@@ -42,6 +42,7 @@ dependencies:
   confetti: ^0.8.0
   pocketbase: ^0.24.0+1
   flutter_svg: ^2.3.0
+  flutter_tts: ^4.2.2
 
 dev_dependencies:
   flutter_test:
